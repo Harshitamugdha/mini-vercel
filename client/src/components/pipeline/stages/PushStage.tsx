@@ -1,6 +1,7 @@
 import { useEffect, useRef, type Ref } from "react";
 import { motion, type Variants } from "framer-motion";
-import { ArrowRight, GitBranch } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
 
 interface HeroStageProps {
   sectionRef: Ref<HTMLDivElement>;
@@ -108,25 +109,32 @@ export default function PushStage({ sectionRef, onWatchDeployment }: HeroStagePr
           variants={item}
           className="mt-7 max-w-xl text-base leading-8 text-zinc-400 sm:text-lg"
         >
-          A cinematic deployment path from GitHub to Actions, Build, S3, CloudFront, and production.
-        </motion.p>
+        From a single Git push to a live production deployment,
+        powered by GitHub Actions, Amazon S3, and CloudFront.
+                </motion.p>
 
-        <motion.div variants={item} className="mt-9 flex flex-wrap justify-center gap-3">
-          <button
-            type="button"
-            onClick={onWatchDeployment}
-            className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-zinc-950 shadow-xl shadow-blue-950/20 transition-transform hover:scale-[1.03]"
+      <motion.div
+        variants={item}
+        className="mt-10 flex flex-wrap justify-center gap-4"
+      >
+  
+      <button
+        type="button"
+        className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-zinc-950 shadow-xl shadow-blue-950/20 transition-all duration-200 hover:scale-[1.03] hover:bg-zinc-200 active:scale-[0.98]"
+      >
+      <FaGithub size={16} />
+      Continue with GitHub
+      </button>
+
+  
+        <button
+          type="button"
+          onClick={onWatchDeployment}
+          className="inline-flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-950/70 px-6 py-3 text-sm font-semibold text-zinc-200 backdrop-blur-xl transition-all duration-200 hover:border-zinc-700 hover:bg-zinc-900"
           >
-            Watch deployment <ArrowRight size={16} />
+          See Demo
+          <ArrowRight size={16} />
           </button>
-          <a
-            href="https://github.com"
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-950/70 px-5 py-3 text-sm font-semibold text-zinc-200 backdrop-blur-xl transition-colors hover:border-zinc-700 hover:bg-zinc-900"
-          >
-            <GitBranch size={16} /> View source
-          </a>
         </motion.div>
 
         <motion.div

@@ -5,8 +5,9 @@ import {
   GitBranch,
   ShieldCheck,
   Globe,
-  Terminal,
+  
 } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
 
 const FEATURES = [
   {
@@ -97,49 +98,31 @@ export default function Features() {
           ))}
         </div>
 
-        {/* Live Deployment History Preview Panel */}
-        <div className="mt-20 rounded-xl border border-zinc-800 bg-zinc-900/70 p-6 shadow-2xl backdrop-blur-md">
-          <div className="flex items-center justify-between border-b border-zinc-800 pb-4">
-            <div className="flex items-center gap-2.5 font-mono text-xs text-zinc-300">
-              <Terminal size={15} className="text-blue-400" />
-              <span className="font-semibold">Recent Production Deployments</span>
-            </div>
-            <span className="font-mono text-[0.65rem] text-emerald-400">
-              ● Live Monitoring
-            </span>
-          </div>
+ 
+          {/* Final Call To Action */}
+<section className="mt-24 overflow-hidden rounded-2xl border border-zinc-800 bg-gradient-to-br from-zinc-900 via-zinc-950 to-zinc-900 p-10 text-center shadow-2xl">
+  
+    <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
+  Ready to{" "}
+  <span className="bg-gradient-to-r from-blue-400 via-sky-400 to-cyan-300 bg-clip-text text-transparent">
+    deploy?
+  </span>
+</h2>
 
-          <div className="mt-4 space-y-3 font-mono text-xs">
-            {DEPLOY_HISTORY.map((dep, idx) => (
-              <div
-                key={dep.commit}
-                className="flex flex-col justify-between gap-2 rounded-lg border border-zinc-800/60 bg-zinc-950/60 p-3.5 sm:flex-row sm:items-center"
-              >
-                <div className="flex items-center gap-3">
-                  <span className={`h-2 w-2 rounded-full ${idx === 0 ? "bg-emerald-400" : "bg-zinc-600"}`} />
-                  <span className="font-semibold text-white">{dep.commit}</span>
-                  <span className="text-zinc-500">[{dep.branch}]</span>
-                  <span className="text-zinc-400">by {dep.author}</span>
-                </div>
+<p className="mx-auto mt-4 max-w-3xl text-lg leading-8 text-zinc-400">
+  Authenticate with GitHub, connect your repository, and deploy your React
+  applications through an automated CI/CD pipeline powered by GitHub Actions,
+  Amazon S3, and CloudFront.
+</p>
 
-                <div className="flex items-center gap-4 text-xs">
-                  <span className="text-zinc-500">{dep.duration}</span>
-                  <span className="rounded bg-emerald-500/10 px-2 py-0.5 font-medium text-emerald-400 border border-emerald-500/20">
-                    {dep.status}
-                  </span>
-                  <a
-                    href={dep.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="truncate text-blue-400 hover:underline max-w-[200px]"
-                  >
-                    {dep.url}
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+<button
+  className="mt-8 inline-flex items-center gap-3 rounded-full bg-white px-7 py-3.5 text-[15px] font-semibold text-zinc-950 shadow-lg shadow-blue-950/20 transition-all duration-200 hover:-translate-y-0.5 hover:scale-[1.03] hover:bg-zinc-200"
+>
+  <FaGithub size={17} />
+  Continue with GitHub
+</button>
+  
+</section>
       </div>
     </section>
   );
