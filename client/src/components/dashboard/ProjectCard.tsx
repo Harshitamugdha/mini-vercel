@@ -1,8 +1,4 @@
-// ─── ProjectCard Component (Phase 4 Glanceable Model) ─────────────────────────
-// Glanceable card design: clicking the card opens the URL-addressable Drawer.
-// Quick-action Redeploy is the sole direct button target to avoid overlapping click targets.
 
-import React from "react";
 import {
   GitBranch,
   RotateCw,

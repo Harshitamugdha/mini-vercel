@@ -10,7 +10,7 @@
 
 import React from "react";
 import { FaGithub } from "react-icons/fa";
-import { Cpu, Database, Globe, Check, X, Loader2, Clock, Minus } from "lucide-react";
+import { Cpu, Database, Globe, Check, X, Loader2, Minus } from "lucide-react";
 import type { PipelineStage, StageId, OverallStatus } from "../../types/project";
 import { computeOverallStatus } from "../../types/project";
 

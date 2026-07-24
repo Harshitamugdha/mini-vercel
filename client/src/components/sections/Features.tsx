@@ -48,11 +48,6 @@ const FEATURES = [
   },
 ];
 
-const DEPLOY_HISTORY = [
-  { commit: "a3f91c2", branch: "main", duration: "14.2s", status: "Live", url: "https://your-app.cloudfront.net", author: "harshitamugdha" },
-  { commit: "f9b801a", branch: "main", duration: "13.8s", status: "Passed", url: "https://your-app-f9b801a.cloudfront.net", author: "harshitamugdha" },
-  { commit: "c2e418d", branch: "main", duration: "15.1s", status: "Passed", url: "https://your-app-c2e418d.cloudfront.net", author: "harshitamugdha" },
-];
 
 export default function Features() {
   return (

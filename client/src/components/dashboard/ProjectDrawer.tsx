@@ -17,7 +17,6 @@ import {
   Terminal,
   Settings as SettingsIcon,
   Activity,
-  Layers,
   AlertCircle,
   Copy,
   Check,

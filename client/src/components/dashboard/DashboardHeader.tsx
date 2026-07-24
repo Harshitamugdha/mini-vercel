@@ -6,7 +6,6 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import {
   Search,
-  Bell,
   ChevronDown,
   User as UserIcon,
   Settings,
