@@ -1,5 +1,5 @@
 import { FaGithub } from "react-icons/fa";
-
+import { loginWithGitHub } from "../../services/authService";
 export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 border-b border-zinc-800/60 bg-zinc-950/80 backdrop-blur-md">
@@ -39,6 +39,7 @@ export default function Navbar() {
 
           <button
             className="inline-flex items-center gap-2 rounded-lg bg-white px-4 py-2 text-sm font-semibold text-black transition-all duration-200 hover:scale-[1.02] hover:bg-zinc-200 active:scale-[0.98]"
+            onClick={loginWithGitHub}
           >
             <FaGithub size={15} />
             Continue with GitHub

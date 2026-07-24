@@ -2,7 +2,7 @@ import { useEffect, useRef, type Ref } from "react";
 import { motion, type Variants } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
-
+import { loginWithGitHub } from "../../../services/authService";
 interface HeroStageProps {
   sectionRef: Ref<HTMLDivElement>;
   onWatchDeployment: () => void;
@@ -120,6 +120,7 @@ export default function PushStage({ sectionRef, onWatchDeployment }: HeroStagePr
   
       <button
         type="button"
+        onClick={loginWithGitHub}
         className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-zinc-950 shadow-xl shadow-blue-950/20 transition-all duration-200 hover:scale-[1.03] hover:bg-zinc-200 active:scale-[0.98]"
       >
       <FaGithub size={16} />

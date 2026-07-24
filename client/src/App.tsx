@@ -1,18 +1,22 @@
-import Navbar from "./components/layout/Navbar";
-import PipelineLayout from "./components/pipeline/PipelineLayout";
-import Features from "./components/sections/Features";
-import Footer from "./components/layout/Footer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import { AuthProvider } from "./contexts/AuthContext";
+
+import Landing from "./pages/Landing";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   return (
-    <div className="min-h-screen bg-zinc-950 font-sans text-zinc-100 selection:bg-blue-500/20 selection:text-blue-300 antialiased overflow-x-hidden">
-      <Navbar />
-      <main>
-        <PipelineLayout />
-        <Features />
-      </main>
-      <Footer />
-    </div>
+    <AuthProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/dashboard/deployments" element={<Dashboard />} />
+          <Route path="/dashboard/settings" element={<Dashboard />} />
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
   );
 }
 

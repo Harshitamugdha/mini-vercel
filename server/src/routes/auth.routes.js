@@ -14,10 +14,11 @@ router.get(
 router.get(
   "/github/callback",
   passport.authenticate("github", {
-    failureRedirect: "/auth/failed",
+    failureRedirect: `${process.env.FRONTEND_URL}/`,
+    session: true,
   }),
   (req, res) => {
-    res.redirect("http://localhost:5173/dashboard");
+    res.redirect(`${process.env.FRONTEND_URL}/dashboard`);
   }
 );
 router.get("/failed", (req, res) => {
@@ -39,13 +40,20 @@ router.get("/me", (req, res) => {
     user: req.user,
   });
 });
+router.post("/logout", (req, res, next) => {
+  req.logout((err) => {
+    if (err) return next(err);
 
+    req.session.destroy((err) => {
+      if (err) return next(err);
 
-router.get(
-  "/me",
-  isAuthenticated,
-  (req, res) => {
-    res.json(req.user);
-  }
-);
+      res.clearCookie("connect.sid");
+
+      res.json({
+        success: true,
+        message: "Logged out successfully",
+      });
+    });
+  });
+});
 export default router;
