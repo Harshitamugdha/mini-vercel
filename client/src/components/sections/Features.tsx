@@ -24,7 +24,7 @@ export default function Features() {
           {FEATURES.map((feat) => {
             const Icon = feat.icon;
             return (
-              <motion.article key={feat.title} variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.45, ease: [0.16, 1, 0.3, 1] } } }} whileHover={{ y: -6, scale: 1.015, borderColor: "rgba(96,165,250,0.42)" }} transition={{ type: "spring", stiffness: 260, damping: 22 }} className="group relative overflow-hidden rounded-2xl border border-zinc-800/90 bg-zinc-900/35 p-6 shadow-xl shadow-black/20">
+              <motion.article key={feat.title} variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.45, ease: "easeOut" } } }} whileHover={{ y: -6, scale: 1.015, borderColor: "rgba(96,165,250,0.42)" }} transition={{ type: "spring", stiffness: 260, damping: 22 }} className="group relative overflow-hidden rounded-2xl border border-zinc-800/90 bg-zinc-900/35 p-6 shadow-xl shadow-black/20">
                 <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-300/40 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
                 <div className="flex items-center justify-between"><div className="flex h-11 w-11 items-center justify-center rounded-xl border border-blue-400/20 bg-blue-400/10"><Icon className="h-5 w-5 text-blue-300" /></div><span className="font-mono text-[0.65rem] tracking-[0.2em] text-zinc-500 group-hover:text-blue-300">{feat.tag}</span></div>
                 <h3 className="mt-6 text-lg font-semibold text-white">{feat.title}</h3>

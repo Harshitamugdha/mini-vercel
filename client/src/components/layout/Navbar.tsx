@@ -8,7 +8,7 @@ export default function Navbar() {
   const borderColor = useTransform(scrollY, [0, 120], ["rgba(39,39,42,0.35)", "rgba(63,63,70,0.72)"]);
 
   return (
-    <motion.nav initial={{ y: -18, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }} style={{ backgroundColor, borderColor }} className="sticky top-0 z-50 border-b backdrop-blur-xl">
+    <motion.nav initial={{ y: -18, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.45, ease: "easeOut" }} style={{ backgroundColor, borderColor }} className="sticky top-0 z-50 border-b backdrop-blur-xl">
       <div className="mx-auto flex h-16 w-full max-w-7xl items-center px-5 sm:px-6 lg:px-10">
         <a href="/" className="text-base font-bold tracking-tight text-white transition-opacity hover:opacity-90">Mini <span className="text-blue-400">Vercel</span></a>
         <div className="ml-10 hidden items-center gap-7 md:flex">

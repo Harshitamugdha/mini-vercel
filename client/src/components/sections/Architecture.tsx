@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
-import { Box, Cloud, Code2, GitBranch, Github, Globe } from "lucide-react";
+import { Box, Cloud, Code2, GitBranch, Globe } from "lucide-react";
 
 const steps = [
-  { label: "GitHub", detail: "Repository push", icon: Github },
+  { label: "GitHub", detail: "Repository push", icon: GitBranch },
   { label: "GitHub Actions", detail: "CI runner", icon: GitBranch },
   { label: "Build", detail: "React bundle", icon: Code2 },
   { label: "AWS S3", detail: "Static hosting", icon: Box },
