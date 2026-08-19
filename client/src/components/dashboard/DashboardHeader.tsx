@@ -51,7 +51,7 @@ export default function DashboardHeader({
   return (
     <header className="sticky top-0 z-40 border-b border-zinc-800/80 bg-zinc-950/85 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center gap-8">
+        <div className="flex items-center gap-4 lg:gap-8">
           <Link to="/dashboard" className="flex items-center gap-2 font-sans font-bold text-white text-lg tracking-tight">
             Mini <span className="text-blue-500">Vercel</span>
           </Link>
@@ -80,7 +80,7 @@ export default function DashboardHeader({
         {/* Center/Right: Global Search + Notifications + User Menu */}
         <div className="flex items-center gap-3">
           {/* Global Search Bar */}
-          <div className="relative hidden sm:block w-48 md:w-64">
+          <div className="relative hidden sm:block flex-1 min-w-0 max-w-[12rem] lg:max-w-[16rem]">
             <Search className="absolute left-3 top-2.5 h-4 w-4 text-zinc-500" />
             <input
               type="text"
@@ -112,7 +112,7 @@ export default function DashboardHeader({
                     {user.username?.[0]?.toUpperCase() || "U"}
                   </div>
                 )}
-                <span className="hidden sm:inline font-mono text-xs font-medium text-zinc-200">
+                <span className="hidden sm:inline font-mono text-xs font-medium text-zinc-200 truncate max-w-[80px] lg:max-w-[120px]">
                   {user.username}
                 </span>
                 <ChevronDown className="h-3.5 w-3.5 text-zinc-400" />

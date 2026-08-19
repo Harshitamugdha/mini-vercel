@@ -46,3 +46,10 @@
   0%, 44% { opacity: 1; }
   45%, 100% { opacity: 0.24; }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .terminal-cursor {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+}

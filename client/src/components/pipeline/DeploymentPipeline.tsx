@@ -98,7 +98,7 @@ export default function DeploymentPipeline({
                 aria-label={`Pipeline stage ${meta.label}: ${stage.status}`}
                 title={titleText}
                 aria-selected={isSelected}
-                className={`group relative flex flex-col items-center gap-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-lg p-1 transition-all ${
+                className={`group relative flex flex-col items-center gap-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-lg p-1 transition-all shrink min-w-0 ${
                   variant === "drawer" ? "cursor-pointer hover:scale-105" : "cursor-default"
                 }`}
               >
@@ -161,7 +161,7 @@ export default function DeploymentPipeline({
                 {/* Stage Text Label */}
                 {!compact && (
                   <span
-                    className={`text-[10px] font-medium tracking-tight ${
+                    className={`text-[10px] font-medium tracking-tight truncate max-w-[50px] sm:max-w-[70px] lg:max-w-none ${
                       isSuccess
                         ? "text-emerald-400/90"
                         : isFailed

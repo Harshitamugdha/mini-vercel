@@ -179,7 +179,7 @@ const handleDeleteProject = async (projectId: string) => {
 
         {/* Toolbar: Local Search & Sort */}
         <div className="my-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-          <div className="relative flex-1 max-w-md">
+          <div className="relative flex-1 max-w-md min-w-0">
             <Search className="absolute left-3 top-2.5 h-4 w-4 text-zinc-500" />
             <input
               type="text"
