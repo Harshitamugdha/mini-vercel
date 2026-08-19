@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Box, Cloud, Code2, GitBranch, Github, RadioTower } from "lucide-react";
+import { Box, Cloud, Code2, GitBranch, Github, Globe } from "lucide-react";
 
 const steps = [
   { label: "GitHub", detail: "Repository push", icon: Github },
@@ -7,7 +7,7 @@ const steps = [
   { label: "Build", detail: "React bundle", icon: Code2 },
   { label: "AWS S3", detail: "Static hosting", icon: Box },
   { label: "CloudFront", detail: "CDN delivery", icon: Cloud },
-  { label: "Production", detail: "Live URL", icon: RadioTower },
+  { label: "Production", detail: "Live URL", icon: Globe },
 ];
 
 export default function Architecture() {

@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
-import { Cloud, Rocket, History, GitBranch, Globe, TerminalSquare } from "lucide-react";
+import { Cloud, Rocket, History, GitBranch, Globe, Cpu } from "lucide-react";
 
 const FEATURES = [
   { icon: Rocket, title: "GitHub integration", tag: "WEBHOOK", description: "Authenticate with GitHub, import a repository, and let repository events start the deployment flow." },
   { icon: GitBranch, title: "Automated builds", tag: "ACTIONS", description: "GitHub Actions runs the install and build work needed to turn a React project into a deployable bundle." },
-  { icon: TerminalSquare, title: "Visible pipeline", tag: "TIMELINE", description: "The landing journey makes each deployment stage explicit instead of hiding the process in a black box." },
+  { icon: Cpu, title: "Visible pipeline", tag: "TIMELINE", description: "The landing journey makes each deployment stage explicit instead of hiding the process in a black box." },
   { icon: Cloud, title: "AWS S3 hosting", tag: "ORIGIN", description: "Built static assets are published to S3 as the durable origin for deployed React applications." },
   { icon: Globe, title: "CloudFront delivery", tag: "EDGE", description: "CloudFront sits in front of S3 so production traffic is delivered through an AWS CDN layer." },
   { icon: History, title: "Deployment evidence", tag: "LOGS", description: "Project views preserve status, deployment URLs, timestamps, and operational context for each release." },
