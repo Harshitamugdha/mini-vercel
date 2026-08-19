@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
 import { Box, Cloud, Code2, GitBranch, Globe } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
 
 const steps = [
-  { label: "GitHub", detail: "Repository push", icon: GitBranch },
+  { label: "GitHub", detail: "Repository push", icon: FaGithub },
   { label: "GitHub Actions", detail: "CI runner", icon: GitBranch },
   { label: "Build", detail: "React bundle", icon: Code2 },
   { label: "AWS S3", detail: "Static hosting", icon: Box },
