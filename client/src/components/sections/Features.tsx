@@ -1,123 +1,38 @@
-import {
-  Cloud,
-  Rocket,
-  History,
-  GitBranch,
-  ShieldCheck,
-  Globe,
-  
-} from "lucide-react";
-import { FaGithub } from "react-icons/fa";
+import { motion } from "framer-motion";
+import { Cloud, Rocket, History, GitBranch, Globe, Cpu } from "lucide-react";
 
 const FEATURES = [
-  {
-    icon: <Rocket className="text-blue-400" size={24} />,
-    title: "One-Push Deployment",
-    tag: "AUTOMATED",
-    description: "Push to main branch. GitHub Webhooks automatically trigger the cloud deployment orchestration pipeline.",
-  },
-  {
-    icon: <Cloud className="text-blue-400" size={24} />,
-    title: "Amazon S3 Edge Origin",
-    tag: "AWS S3",
-    description: "Static React bundles sync to Amazon S3 buckets with zero-downtime atomic object replacements.",
-  },
-  {
-    icon: <Globe className="text-blue-400" size={24} />,
-    title: "CloudFront CDN",
-    tag: "GLOBAL CDN",
-    description: "Sub-millisecond global asset propagation across 300+ Edge Locations with instant cache invalidation.",
-  },
-  {
-    icon: <GitBranch className="text-blue-400" size={24} />,
-    title: "Isolated Runner Matrix",
-    tag: "CI/CD",
-    description: "Ubuntu-latest GitHub Actions runners execute linting, unit tests, and Vite bundle compilation in parallel.",
-  },
-  {
-    icon: <ShieldCheck className="text-blue-400" size={24} />,
-    title: "Automatic SSL & HTTPS",
-    tag: "SECURITY",
-    description: "TLS v1.3 certificates dynamically assigned to every CloudFront distribution endpoint.",
-  },
-  {
-    icon: <History className="text-blue-400" size={24} />,
-    title: "Deployment Telemetry",
-    tag: "LOGS",
-    description: "Complete historical audit log with commit hashes, run numbers, build durations, and deployment URLs.",
-  },
+  { icon: Rocket, title: "GitHub integration", tag: "WEBHOOK", description: "Authenticate with GitHub, import a repository, and let repository events start the deployment flow." },
+  { icon: GitBranch, title: "Automated builds", tag: "ACTIONS", description: "GitHub Actions runs the install and build work needed to turn a React project into a deployable bundle." },
+  { icon: Cpu, title: "Visible pipeline", tag: "TIMELINE", description: "The landing journey makes each deployment stage explicit instead of hiding the process in a black box." },
+  { icon: Cloud, title: "AWS S3 hosting", tag: "ORIGIN", description: "Built static assets are published to S3 as the durable origin for deployed React applications." },
+  { icon: Globe, title: "CloudFront delivery", tag: "EDGE", description: "CloudFront sits in front of S3 so production traffic is delivered through an AWS CDN layer." },
+  { icon: History, title: "Deployment evidence", tag: "LOGS", description: "Project views preserve status, deployment URLs, timestamps, and operational context for each release." },
 ];
-
 
 export default function Features() {
   return (
-    <section id="features" className="relative border-t border-zinc-900 bg-zinc-950 px-6 py-28 lg:px-16">
-      <div className="mx-auto max-w-6xl">
-        {/* Section Header */}
-        <div className="text-center">
-          <p className="font-mono text-xs uppercase tracking-[0.2em] text-blue-400">
-            PLATFORM ARCHITECTURE
-          </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-white sm:text-5xl">
-            Built for High-Velocity Engineering
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-zinc-400 sm:text-base">
-            Mini Vercel abstracts complex AWS infrastructure into a single automated pipeline.
-          </p>
-        </div>
+    <section id="features" className="relative border-t border-zinc-900 bg-zinc-950 px-6 py-28 lg:px-10">
+      <div className="mx-auto max-w-7xl">
+        <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.35 }} transition={{ duration: 0.55 }} className="max-w-3xl">
+          <p className="font-mono text-xs uppercase tracking-[0.24em] text-blue-300">Platform capabilities</p>
+          <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-white sm:text-5xl">The pieces of a deployment platform, made visible.</h2>
+          <p className="mt-4 text-base leading-8 text-zinc-400">Mini Vercel focuses on the real mechanics of shipping a React app: source control, CI, storage, CDN delivery, and evidence that explains what happened.</p>
+        </motion.div>
 
-        {/* Feature Cards Grid */}
-        <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {FEATURES.map((feat) => (
-            <div
-              key={feat.title}
-              className="group relative overflow-hidden rounded-xl border border-zinc-800/80 bg-zinc-900/40 p-6 shadow-lg backdrop-blur-sm transition-all duration-300 hover:border-zinc-700 hover:bg-zinc-900/80 hover:shadow-xl hover:shadow-blue-950/20"
-              style={{ opacity: 1, transform: "translateY(0)" }}
-            >
-              <div className="flex items-center justify-between">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-blue-500/30 bg-blue-500/10">
-                  {feat.icon}
-                </div>
-                <span className="font-mono text-[0.65rem] font-medium tracking-wider text-zinc-500 group-hover:text-blue-400">
-                  {feat.tag}
-                </span>
-              </div>
-
-              <h3 className="mt-5 text-lg font-semibold text-white group-hover:text-blue-300">
-                {feat.title}
-              </h3>
-              <p className="mt-2 text-xs leading-relaxed text-zinc-400">
-                {feat.description}
-              </p>
-            </div>
-          ))}
-        </div>
-
- 
-          {/* Final Call To Action */}
-<section className="mt-24 overflow-hidden rounded-2xl border border-zinc-800 bg-gradient-to-br from-zinc-900 via-zinc-950 to-zinc-900 p-10 text-center shadow-2xl">
-  
-    <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-  Ready to{" "}
-  <span className="bg-gradient-to-r from-blue-400 via-sky-400 to-cyan-300 bg-clip-text text-transparent">
-    deploy?
-  </span>
-</h2>
-
-<p className="mx-auto mt-4 max-w-3xl text-lg leading-8 text-zinc-400">
-  Authenticate with GitHub, connect your repository, and deploy your React
-  applications through an automated CI/CD pipeline powered by GitHub Actions,
-  Amazon S3, and CloudFront.
-</p>
-
-<button
-  className="mt-8 inline-flex items-center gap-3 rounded-full bg-white px-7 py-3.5 text-[15px] font-semibold text-zinc-950 shadow-lg shadow-blue-950/20 transition-all duration-200 hover:-translate-y-0.5 hover:scale-[1.03] hover:bg-zinc-200"
->
-  <FaGithub size={17} />
-  Continue with GitHub
-</button>
-  
-</section>
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.18 }} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.08 } } }} className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {FEATURES.map((feat) => {
+            const Icon = feat.icon;
+            return (
+              <motion.article key={feat.title} variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.45, ease: "easeOut" } } }} whileHover={{ y: -6, scale: 1.015, borderColor: "rgba(96,165,250,0.42)" }} transition={{ type: "spring", stiffness: 260, damping: 22 }} className="group relative overflow-hidden rounded-2xl border border-zinc-800/90 bg-zinc-900/35 p-6 shadow-xl shadow-black/20">
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-300/40 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+                <div className="flex items-center justify-between"><div className="flex h-11 w-11 items-center justify-center rounded-xl border border-blue-400/20 bg-blue-400/10"><Icon className="h-5 w-5 text-blue-300" /></div><span className="font-mono text-[0.65rem] tracking-[0.2em] text-zinc-500 group-hover:text-blue-300">{feat.tag}</span></div>
+                <h3 className="mt-6 text-lg font-semibold text-white">{feat.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-zinc-400">{feat.description}</p>
+              </motion.article>
+            );
+          })}
+        </motion.div>
       </div>
     </section>
   );
